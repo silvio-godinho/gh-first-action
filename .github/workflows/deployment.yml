@@ -1,8 +1,6 @@
 name: First Workflow
 on:
- push:
-  branches:
-  - main
+  workflow_dispatch:
 
 jobs:
   test:
@@ -24,7 +22,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Get Code
-      uses: actions/setup-node@v3
+      uses: actions/checkout@v4
     - name: install NodeJs
       uses: actions/setup-node@v3
       with:
